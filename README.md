@@ -7,7 +7,7 @@
 ## プロジェクト単位
 プロジェクト単位の文書一覧です。
 
-- [運営規則](repo/doc/rules.md)
+- [運営規則](repo/rules.md)
 
 ## リポジトリ単位
 リポジトリ単位の文書一覧です。
@@ -24,7 +24,7 @@
 
 開発者を対象読者とした文書の一覧です。
 
-- [仕様書](repo/doc/dev/Specification.xlsm)
+- [仕様書](repo/doc/dev/Specification.xlsx)
 
 ## Setup on Visual Studio Code
 
