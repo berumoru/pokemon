@@ -954,11 +954,10 @@ def __update_by_phase(state, action, phase, target):
     
     # ダメージによる追加効果の発動
     elif phase == 'phase__effect_by_damage':
-        # TODO
         if state['system_info']['damage'] > 0:
             # 攻撃側のポケモンを参照
             active_pokemon_id = state[f'{target}_info']['active_pokemon_id']
-            active_pokemon = state[f'{opponent}_info']['pokemons'][active_pokemon_id]
+            active_pokemon = state[f'{target}_info']['pokemons'][active_pokemon_id]
             # 攻撃側のポケモンの技を参照
             move_id = state[f'{target}_info']['selected_move_id']
             move = active_pokemon['moves'][move_id]
@@ -977,7 +976,7 @@ def __update_by_phase(state, action, phase, target):
 
             # 防御側のポケモンの特性が「さめはだ」で、
             # 攻撃側のポケモンの技が接触技の場合
-            if (opponent_active_pokemon_ability['name'] == ['さめはだ']) & move['is_contact']:
+            if (opponent_active_pokemon_ability == ['さめはだ']) & move['is_contact']:
                 print('comment:', f"プレイヤー{target} の {active_pokemon['name']} は さめはだの ダメージを うけた！")
                 # ダメージ量計算
                 damage = int(active_pokemon_max_H / 8)
@@ -1009,7 +1008,7 @@ def __update_by_phase(state, action, phase, target):
             
             # 防御側のポケモンがゴツゴツメットを持っていて、
             # 攻撃側のポケモンの技が接触技の場合
-            if (opponent_active_pokemon_item['name'] == ['ゴツゴツメット']) & move['is_contact']:
+            if (opponent_active_pokemon_item == ['ゴツゴツメット']) & move['is_contact']:
                 print('comment:', f"プレイヤー{target} の {active_pokemon['name']} は ゴツゴツメット の ダメージを うけた！")
                 # ダメージ量計算
                 damage = int(active_pokemon_max_H / 6)

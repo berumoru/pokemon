@@ -3,7 +3,7 @@ import numpy as np
 import Visualize
 
 # エージェントは現在の状態から、行動を決定する
-def response_action(state, request, auto=False):
+def response_action(state, request, auto=True):
 
     # 現在のフェーズを参照
     phase = state['system_info']['phase']
@@ -95,9 +95,9 @@ def response_action(state, request, auto=False):
             print()
     else:
         # 現時点では完全ランダム
-        # action = np.random.choice(selection)
+        action = np.random.choice(selection)
         # デバッグ用
-        action = 'move_2'
+        #action = 'move_2'
         
 
     return action
